@@ -9,21 +9,19 @@ class Bullet;
 
 class Player : public IObject {
 private:
-
 	InputManager* input_ = nullptr;
 
-	std::vector<Bullet*> bullets_;
+	const float kMoveSpeed_ = 5.0f;
 
 public:
 	void Initialize() override;
-	void Initialize(std::vector<Bullet*>& bullets);
 
 	void Update() override;
 
 	void Draw() override;
 
-private:
-	void GetOparate();
+public:
+	void MoveRight();
 
-	void Shot();
+	void MoveLeft();
 };
